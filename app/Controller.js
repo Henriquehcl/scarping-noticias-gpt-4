@@ -222,7 +222,7 @@ class Controller {
                 }
 
             }
-            return res.status(200).json({ message:googleSheets.message,data:news,planilha:googleSheets.link,erro:googleSheets.erro || 'nenhum erro encontrado.'});  
+            return res.status(200).json({ message:googleSheets.message,planilha:googleSheets.link,erro:googleSheets.erro || 'nenhum erro encontrado.'});  
             
         } catch (error) {
             console.error(error);
