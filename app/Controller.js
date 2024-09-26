@@ -233,6 +233,15 @@ class Controller {
         }
     }
 
+    /**
+     * validar a aplicação no aws
+     * @param {*} req 
+     * @param {*} res 
+     */
+    async validAPP(req, res){
+        return res.status(200).json({ data: 'ok'});  
+    }
+
 }
 
 module.exports = new Controller();
