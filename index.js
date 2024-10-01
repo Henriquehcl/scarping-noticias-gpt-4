@@ -5,6 +5,7 @@ require('dotenv').config();
 const express = require('express');
 const route = require('./app/Router');
 const db = require('./app/server/db');
+const cors = require('cors');
 
 (async () =>{
 
@@ -17,6 +18,17 @@ const db = require('./app/server/db');
      * body parser, para trabalhar com JSON
      */
     app.use(express.json());//bodyParser
+
+    const corsOptions = {
+        origin: '*', 
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+        headers: 'Content-Type,Authorization,x-access-token', 
+        credentials: true,
+        exposedHeaders: 'custom-header-1, custom-header-2',
+        preflightContinue: false
+      };
+      
+    app.use(cors(corsOptions));
 
     /**
      * Adicionando o roteador à instância do aplicativo Express
